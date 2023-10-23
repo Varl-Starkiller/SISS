@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-container{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+.image-container {
+    display: none;
+    margin-left: auto;
+    width: 500px;
+    height:400px;
+    background-image: url("/static/images/namaste.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.form-container{
+    margin-right: auto;
+    background: beige;
+    padding: 1rem;
+}
+.login-form{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sign-in{
+    color: #0038FF;
+}
+.login-input-parent{
+    position: relative;
+}
+.login-input-parent>label{
+    font-size: 15px;
+    transition: 0.5s ease all;
+    position: absolute;
+    top:15px;
+    left:14px;
+}
+.active-label{
+    top:4px;
+    left: 10px;
+    font-size: 13px;
+}
+.login-input-parent>input{
+    outline: none;
+    width: 503px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+}
+.sign-in-button{
+    width: 100%;
+    background-color: #0038FF;
+    color: #FFFFFF;
+    padding:0.41rem;
+}
+@media(min-width:800px){
+    .image-container{
+        display: block;
+    }
+    .main-container {
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        height: 400px;
+    }
+}

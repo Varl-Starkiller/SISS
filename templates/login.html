@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+<body>
+<div class="main-container">
+    <div class="image-container">
+    </div>
+    <div class="form-container">
+        <form class="login-form" action="">
+            <h4 class="sign-in">SIGN IN</h4>
+            <div class="login-input-parent">
+                <label class="label-for-input" for="email">Email</label>
+                <input id="email" name="email" type="email"/>
+            </div>
+            <div class="login-input-parent">
+                <label class="label-for-input" for="password">Password</label>
+                <input id="password" name="password" type="password" />
+            </div>
+            <button class="sign-in-button">Sign-in</button>
+            <h6 class="create-account">Create new Account?<a href="">Sign Up</a></h6>
+        </form>
+        <div class="external-authentication">
+            <div class="login-from-outside-source"></div>
+            <div class="login-from-outside-source"></div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/login.js' %}"></script>
+</body>
+</html>
