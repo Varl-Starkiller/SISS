@@ -7,59 +7,57 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'css/signuplight.css' %}">
         <script src="{% static 'js/signuplight.js' %}"></script>
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Sign Up</title>
     </head>
 
     <body>
         <div class="container"></div>
         <div class="mode">
-            <p3>Mode</p3>
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
+{#            <p3>Mode</p3>#}
+{#            <label class="switch">#}
+{#                <input type="checkbox">#}
+{#                <span class="slider"></span>#}
+{#            </label>#}
         </div>
-        <form onsubmit="return validateForm();">
+        <form onsubmit="return validateForm();" action="{% url 'saveform' %}" method="POST"> {% csrf_token %}
             <div class="spage">
                 <h2>SIGN UP</h2>
-                <div class="name">
+
+                <div class="name" >
                     <div class="firstname">
                         <p>First name</p>
-                        <input type="text">
+                        <input type="text" name="firstname" required>
                     </div>
+
                     <div class="lastname">
                         <p>Last Name</p>
-                        <input type="text">
+                        <input type="text" name="lastname" required>
                     </div>
                 </div>
 
                 <div class="email">
                     <p>Email</p>
-                    <input type="text" style="width: 730px;">
+                    <input type="text" name="email" style="width: 730px;" required>
                 </div>
 
                 <div class="password">
                     <p>Password</p>
-                    <input type="password">
+                    <input type="password" name="password" required>
                 </div>
 
                 <div class="repassword">
                     <p>Repeat Password</p>
-                    <input type="password">
+                    <input type="password" required>
                 </div>
 
                 <div class="policies">
-                    <input type="checkbox">
+                    <input type="checkbox" required>
                     <p>I have read all the terms of services and policies.</p>
                 </div>
                 <button type="submit">Sign Up</button>
             </div>
         </form>
     </body>
-
-</html>
-</body>
 
 </html>
