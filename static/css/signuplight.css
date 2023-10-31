@@ -1,0 +1,309 @@
+
+            body {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: white;
+                display: flex;
+                flex-direction: row;
+                color: black;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .container {
+                width: 700px;
+                /* Fixed width for the image */
+                height: 100vh;
+                /* 100% of the viewport height */
+                background-image: url("static/images/problem-solving-concept-with-man-light-bulb.jpg");
+                /* Set your image path */
+                background-repeat: repeat-y;
+                /* Repeat vertically if needed */
+                background-size: contain;
+                /* Fit the image within the container */
+            }
+
+            .mode {
+                display: flex;
+                flex-direction: row;
+                position: absolute;
+                right: 0;
+                align-items: center;
+            }
+
+            /* The switch - the box around the slider */
+            .switch {
+                display: block;
+                --width-of-switch: 2.7em;
+                --height-of-switch: 1.5em;
+                /* size of sliding icon -- sun and moon */
+                --size-of-icon: 1.2em;
+                /* it is like a inline-padding of switch */
+                --slider-offset: 0.3em;
+                position: relative;
+                width: var(--width-of-switch);
+                height: var(--height-of-switch);
+            }
+
+            /* Hide default HTML checkbox */
+            .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            /* The slider */
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #f4f4f5;
+                transition: .4s;
+                border-radius: 30px;
+                border: 1px solid black;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: var(--size-of-icon, 1.4em);
+                width: var(--size-of-icon, 1.4em);
+                border-radius: 20px;
+                left: var(--slider-offset, 0.3em);
+                top: 50%;
+                transform: translateY(-50%);
+                background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+                transition: .4s;
+            }
+
+            input:checked+.slider {
+                background-color: #303136;
+            }
+
+            input:checked+.slider:before {
+                left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
+                background: #303136;
+                /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+                box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+            }
+
+            p3 {
+                text-align: right;
+                /* Right-align the text within the h1 element */
+                /* position: absolute; */
+                /* Position the h1 element absolutely */
+                top: 0;
+                /* Position at the top of the screen */
+                right: 0;
+                /* Position at the right side of the screen */
+                margin: 0;
+                /* Remove default margin */
+                /* background: #007bff; */
+                /* Background color (optional) */
+                color: black;
+                /* Text color (optional) */
+                padding: 10px;
+                /* Add padding for better spacing (optional) */
+            }
+
+            form {
+                margin-top: 100px;
+                justify-content: center;
+            }
+
+            .spage {
+                margin-left: 100px;
+                margin-top: 50px;
+            }
+
+            .spage h2 {
+                color: blue;
+            }
+
+            .name {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .name .lastname {
+                margin-left: 5px;
+            }
+
+            input[type="text"]:hover {
+                border-color: blue;
+                /* Change to your preferred color */
+            }
+
+            input[type="password"]:hover {
+                border-color: blue;
+                /* Change to your preferred color */
+            }
+
+            input[type="text"]:focus {
+                border-color: #007bff;
+                /* Change to your preferred color */
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            }
+
+            input[type="password"]:focus {
+                border-color: #007bff;
+                /* Change to your preferred color */
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+                cursor: white;
+            }
+
+            input[type="text"] {
+                width: 353px;
+                padding: 10px;
+                border: 1px solid black;
+                /* Change to your preferred border color */
+                border-radius: 5px;
+                font-size: 16px;
+                outline: none;
+                /* Remove the blue highlight on focus */
+                background: transparent;
+                color: black;
+            }
+
+            input[type="password"] {
+                width: 730px;
+                padding: 10px;
+                border: 1px solid black;
+                /* Change to your preferred border color */
+                border-radius: 5px;
+                font-size: 16px;
+                outline: none;
+                /* Remove the blue highlight on focus */
+                background: transparent;
+                cursor: text;
+                color: black;
+            }
+
+            .policies {
+                display: flex;
+                flex-direction: row;
+            }
+
+            button[type="submit"] {
+                width: 750px;
+                background-color: #007bff;
+                /* Blue background color */
+                color: #fff;
+                /* White text color */
+                font-weight: bold;
+                /* Bold text */
+                font-size: 18px;
+                /* Adjust the font size as needed */
+                padding: 10px;
+                /* Add padding for better spacing */
+                border: none;
+                /* Remove the default button border */
+                cursor: pointer;
+                border-radius: 5px;
+            }
+
+            button[type="submit"] {
+                width: 750px;
+                background-color: #007bff;
+                /* Blue background color */
+                color: #fff;
+                /* White text color */
+                font-weight: bold;
+                /* Bold text */
+                font-size: 18px;
+                /* Adjust the font size as needed */
+                padding: 10px;
+                /* Add padding for better spacing */
+                border: none;
+                /* Remove the default button border */
+                cursor: pointer;
+                border-radius: 5px;
+            }
+
+            .or {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Styling for the left line */
+            .line1 {
+                width: 50%;
+                height: 2px;
+                background: black;
+            }
+
+            /* Styling for the "OR" text container */
+            .OR {
+                padding: 0 10px;
+                /* Add padding to separate text from lines */
+                color: black;
+            }
+
+            /* Styling for the right line */
+            .line2 {
+                width: 50%;
+                height: 2px;
+                background: black;
+            }
+
+            button {
+                width: 373px;
+                border: 1px solid black;
+                border-radius: 10px;
+                background: transparent;
+                /* Transparent background */
+                color: black;
+                /* Blue text color */
+                /* font-weight: bold; */
+                /* Bold text */
+                font-size: 16px;
+                /* Adjust the font size as needed */
+                padding: 10px;
+                /* Add padding for better spacing */
+                /* border: 2px solid transparent; */
+                /* Transparent border */
+                cursor: pointer;
+                transition: background-color 0.3s;
+                /* Smooth color transition on hover */
+            }
+
+            /* Apply styles to the button on hover */
+            button:hover {
+                border-color: #007bff;
+                /* Change to your preferred color */
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            }
+
+            .signwith {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .google-icon {
+                font-size: 20px;
+                /* Adjust the icon size as needed */
+                color: white;
+            }
+
+            .signwith .facebook {
+                margin-left: 4px;
+            }
+
+            .alreadyaccount {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .alreadyaccount p1 {
+                color: #0038FF;
+            }
+
+            .google-icon {
+                font-size: 20px;
+                /* Adjust the icon size as needed */
+                color: black;
+            }
