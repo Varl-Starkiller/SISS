@@ -1,8 +1,8 @@
 
             function validateForm() {
-                var email = document.querySelector('.email input');
-                var password = document.querySelector('.password input');
-                var repassword = document.querySelector('.repassword input');
+                let email = document.querySelector('.email input');
+                let password = document.querySelector('.password input');
+                let repassword = document.querySelector('.repassword input');
 
                 // Check if the email is empty
                 if (email.value.trim() === '') {
@@ -11,7 +11,7 @@
                 }
 
                 // Check if the email is valid
-                var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
                 if (!emailPattern.test(email.value)) {
                     alert('Please enter a valid email address');
                     return false;
@@ -30,7 +30,7 @@
                 }
 
                 // Check if the terms and conditions checkbox is checked
-                var termsCheckbox = document.querySelector('.policies input');
+                let termsCheckbox = document.querySelector('.policies input');
                 if (!termsCheckbox.checked) {
                     alert('Please accept the terms of service and policies');
                     return false;
