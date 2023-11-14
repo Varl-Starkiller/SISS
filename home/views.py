@@ -1,17 +1,19 @@
-from django.shortcuts import render
+# views.py
+from django.shortcuts import render, redirect
+from .models import posts
 
-from home.models import Fpost
 
+def upload_image(request):
+    if request.method == 'POST':
+        captions = request.POST.get('caption')
+        image = request.FILES['image']  # Use 'image' instead of 'images'
 
-# Create your views here.
-
-def npost(request):
-    if request.method == "POST":
-        new_post = Fpost()
-        new_post.caption = request.POST.get('caption')
-
-        if len(request.FILES) != 0:
-            new_post.image = request.FILES['image']
-
+        new_post = posts(caption=captions, image=image)  # Match the field name
         new_post.save()
-    return render(request, 'home.html')
+
+    return render(request, 'createpost.html')
+
+
+def caption(request):
+    post_all = posts.objects.all()
+    return render(request, 'home.html', {'post': post_all})
