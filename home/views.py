@@ -6,9 +6,9 @@ from .models import posts
 def upload_image(request):
     if request.method == 'POST':
         captions = request.POST.get('caption')
-        image = request.FILES['image']  # Use 'image' instead of 'images'
+        image = request.FILES['image']
 
-        new_post = posts(caption=captions, image=image)  # Match the field name
+        new_post = posts(caption=captions, image=image)
         new_post.save()
 
     return render(request, 'createpost.html')
