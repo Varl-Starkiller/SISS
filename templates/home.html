@@ -1,0 +1,32 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Caption</th>
+        <th>Image</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for p in post %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.caption }}</td>
+            {% if p.image %}
+                <td><img src="{{ p.image.url }}" alt="manish" style="max-width: 200px; max-height: 200px;"></td>
+            {% else %}
+                <td>No Image</td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

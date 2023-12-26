@@ -27,28 +27,38 @@
         <div class="name">
             <div class="firstname">
                 <p>First name</p>
-                <input type="text" name="firstname" required>
+                <label>
+                    <input type="text" name="firstname" required>
+                </label>
             </div>
 
             <div class="lastname">
                 <p>Last Name</p>
-                <input type="text" name="lastname" required>
+                <label>
+                    <input type="text" name="lastname" required>
+                </label>
             </div>
         </div>
 
         <div class="email">
             <p>Email</p>
-            <input type="text" name="email" style="width: 730px;" required>
+            <label>
+                <input type="text" name="email" style="width: 730px;" required>
+            </label>
         </div>
 
         <div class="password">
             <p>Password</p>
-            <input type="password" name="password" required>
+            <label>
+                <input type="password" name="password" required>
+            </label>
         </div>
 
         <div class="repassword">
             <p>Repeat Password</p>
-            <input type="password" required>
+            <label>
+                <input type="password" required>
+            </label>
         </div>
 
         <div class="policies">
@@ -90,8 +100,10 @@
                 </div>
             </button>
         </div>
+        <div class="login">
+        <p>Already have an account?<a href="{% url 'signin' %}">Log In</a></p>
 
-
+        </div>
     </div>
 </form>
 </body>

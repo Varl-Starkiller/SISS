@@ -1,6 +1,8 @@
-from django.shortcuts import render
+# views.py
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
 
-from auth.models import users
+from .models import users
 
 
 # Create your views here.
@@ -12,4 +14,26 @@ def signup(request):
         password = request.POST.get('password')
         new_user = users(firstname=first_name, lastname=last_name, email=email, password=password)
         new_user.save()
-    return render(request,  'signuplight.html')
+    return render(request, 'signuplight.html')
+
+
+def signin(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        # Authenticate the user
+        user = authenticate(request, username=email, password=password)
+
+        if user is not None:
+            # If authentication successful, log the user in
+            login(request, user)
+            # Redirect to a success page or any other desired page
+            return redirect('success_page')
+        else:
+            # Authentication failed
+            # You may want to handle unsuccessful login attempts, e.g., display an error message
+            return render(request, 'signin.html', {'error_message': 'Invalid login credentials'})
+    else:
+        # For GET requests, render the signin form
+        return render(request, 'signin.html')

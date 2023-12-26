@@ -393,7 +393,13 @@ button:hover {
     opacity: 8%;
 }
 
-
+.login{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    justify-content: center;
+    text-align: center;
+}
 
 
 

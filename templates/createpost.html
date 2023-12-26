@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>post</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <div class="caption">
+            <p>caption</p>
+            <label>
+                <input type="text" name="caption">
+            </label>
+            <input type="file" name="image">
+        </div>
+        <button type="submit">post</button>
+    </form>
+
+    <p>manish timsina</p>
+
+
+</body>
+</html>

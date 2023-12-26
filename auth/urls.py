@@ -20,4 +20,5 @@ from auth import views
 
 urlpatterns = [
     path('signup/', views.signup, name="saveform"),
+    path('signin/', views.signin, name="signin"),
 ]
