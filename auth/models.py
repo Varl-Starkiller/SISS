@@ -1,12 +1,16 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+from .manager import *
 
+class Users(AbstractUser):
+    username = None
+    email = models.EmailField(unique=True)
+    phone_no = models.CharField(max_length=12)
 
-# Create your models here.
-class users(models.Model):
-    firstname = models.CharField(max_length=100)
-    lastname = models.CharField(max_length=100)
-    email = models.CharField(max_length=100)
-    password = models.CharField(max_length=100)
+    objects = UserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
 
     class Meta:
-        app_label = 'auth'  # Specify the app name to which this model belongs
+        app_label = 'auth'

@@ -8,22 +8,30 @@
 <body>
 <table>
     <thead>
-    <tr>
-        <th>ID</th>
-        <th>Caption</th>
-        <th>Image</th>
-    </tr>
+{#    <tr>#}
+{#        <th>ID</th>#}
+{#        <th>Caption</th>#}
+{#        <th>Image</th>#}
+{#    </tr>#}
     </thead>
     <tbody>
     {% for p in post %}
         <tr>
-            <td>{{ p.id }}</td>
-            <td>{{ p.caption }}</td>
+{#            <td>{{ p.id }}</td>#}
+
+
+            <tr> <td>{{ p.caption }}</td></tr>
+            <tr>
             {% if p.image %}
                 <td><img src="{{ p.image.url }}" alt="manish" style="max-width: 200px; max-height: 200px;"></td>
-            {% else %}
-                <td>No Image</td>
+{#            {% else %}#}
+{#                <td>No Image</td>#}
             {% endif %}
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
         </tr>
     {% endfor %}
     </tbody>
